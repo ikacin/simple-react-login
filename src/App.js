@@ -1,5 +1,9 @@
 import React, {useState} from 'react';
-import  './main.css';
+import Modal from './modal';
+import './main.css';
+import Alert from './alert'
+import AlertTitle from "@mui/material/AlertTitle";
+import './login-page';
 
 function RegistrationForm() {
 
@@ -16,6 +20,8 @@ function RegistrationForm() {
     if(id === "firstName"){
       setFirstName(value);
       localStorage.setItem("name",e.target.value);
+    }else{
+
     }
     if(id === "lastName"){
       setLastName(value);
@@ -36,13 +42,17 @@ function RegistrationForm() {
 
   }
 
+
+
   const handleSubmit  = (e) => {
     debugger
     if(firstName || lastName || email || password || confirmPassword){
 
+    alert("doğru bilgileri girdiniz")
+
 
     }else{
-      alert("bilgilerinizi giriniz")
+      alert("yanlış bilgileri girdiniz")
     }
   }
 
@@ -50,9 +60,10 @@ function RegistrationForm() {
       <div className={"form"}>
         <div className={"form-body"}>
           <h1>Sign Up</h1>
+
           <div className={"username"}>
             <label className={"form__label"} >First Name </label>
-            <input className={"form__input"} type="text"  onChange = {(e) => handleInputChange(e)} id="firstName" placeholder="First Name" required/>
+            <input className={"form__input"} type="text"  onChange = {(e) => handleInputChange(e)} id="firstName" placeholder="First Name" required />
           </div>
           <div className={"lastname"}>
             <label className={"form__label"}>Last Name </label>
@@ -73,6 +84,7 @@ function RegistrationForm() {
         </div>
         <div className={"footer"}>
           <button onClick={(e)=>handleSubmit(e)} type="submit" className={"btn"}>Register</button>
+          <a className={"user-login"} href="#">Giriş Sayfasına gitmek için tıklayınız</a>
         </div>
       </div>
 

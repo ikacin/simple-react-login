@@ -39,12 +39,21 @@ input#password {
     margin-left: 59px;
 }
 input#email {
-    margin-left: 82px;
+    margin-left: 87px;
 }
 
+input{
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    outline: none;
+}
 
-.footer{
-    text-align: center;
+.footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 button{
     display: inline-block;
@@ -58,6 +67,7 @@ button{
     -o-border-radius: 5px;
     -ms-border-radius: 5px;
     margin-top: 25px;
+    margin-bottom: 20px;
     cursor: pointer;
     border: none!important;
 }
